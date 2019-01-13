@@ -1,0 +1,22 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <button
+      mat-raised-button
+      [color]="formatting.isApplied ? 'accent' : 'primary'"
+      *ngFor="let formatting of formattings"
+      (click)="toggleFormatting(formatting)"
+    >
+      <mat-icon>{{ formatting.icon }}</mat-icon>
+    </button>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <button
+      mat-raised-button
+      color="primary"
+      *ngFor="let synonym of synonymous"
+      (click)="formattingChanged.emit(synonym)"
+    >
+      {{ synonym.word }}
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

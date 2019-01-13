@@ -16,6 +16,15 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "@ng-editor/editor": [
+        "libs/editor/src/index.ts"
+      ],
+      "@ng-editor/shared": [
+        "libs/shared/src/index.ts"
+      ],
+      "@ng-editor/core": [
+        "libs/core/src/index.ts"
+      ]
     }
   },
   "exclude": [

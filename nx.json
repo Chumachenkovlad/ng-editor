@@ -7,5 +7,21 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "editor": {
+      "tags": []
+    },
+    "testapp": {
+      "tags": []
+    },
+    "testapp-e2e": {
+      "tags": []
+    },
+    "shared": {
+      "tags": []
+    },
+    "core": {
+      "tags": []
+    }
+  }
 }
