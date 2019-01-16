@@ -6,8 +6,12 @@ import {
   MatIconModule,
   MatMenuModule,
   MatToolbarModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatInputModule
 } from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const MATERIAL_MODULES = [
   MatCardModule,
@@ -15,11 +19,14 @@ const MATERIAL_MODULES = [
   MatToolbarModule,
   MatMenuModule,
   MatButtonModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatInputModule
 ];
 
 @NgModule({
-  imports: [CommonModule, ...MATERIAL_MODULES],
-  exports: [CommonModule, MATERIAL_MODULES]
+  imports: [CommonModule, ReactiveFormsModule, ...MATERIAL_MODULES],
+  exports: [CommonModule, ReactiveFormsModule, ...MATERIAL_MODULES]
 })
 export class SharedModule {}

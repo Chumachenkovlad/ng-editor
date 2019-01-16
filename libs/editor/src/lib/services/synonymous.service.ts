@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { Word } from '../models';
 
 const DEFAULT_FILTER = {
-  max: '4'
+  max: '10'
 };
 
 @Injectable()

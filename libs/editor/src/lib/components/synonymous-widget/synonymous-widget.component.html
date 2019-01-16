@@ -1,0 +1,9 @@
+<h3>Select Synonym:</h3>
+<button
+  mat-raised-button
+  color="primary"
+  *ngFor="let synonym of (synonymous$ | async)"
+  (click)="synonymSelected.emit(synonym.word)"
+>
+  {{ synonym.word }}
+</button>

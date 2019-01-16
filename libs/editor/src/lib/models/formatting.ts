@@ -1,7 +1,11 @@
 export interface Formatting {
-  propertyPath: string; // 'style.fontWeight',
-  defaultValue: string;
-  appliedValue: string; // may be regex for colour
-  isApplied: boolean;
-  icon: string;
+  key?: string;
+  property?: string; // 'style.fontWeight',
+  style?: string;
+  value?: string;
+  appliedValue?: string;
+  type?: FormattingType;
+  icon?: string;
 }
+
+export type FormattingType = 'toggler' | 'widget';

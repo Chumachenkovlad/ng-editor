@@ -1,22 +1,44 @@
-<mat-toolbar>
-  <mat-toolbar-row>
-    <button
-      mat-raised-button
-      [color]="formatting.isApplied ? 'accent' : 'primary'"
-      *ngFor="let formatting of formattings"
-      (click)="toggleFormatting(formatting)"
-    >
-      <mat-icon>{{ formatting.icon }}</mat-icon>
-    </button>
-  </mat-toolbar-row>
-  <mat-toolbar-row>
-    <button
-      mat-raised-button
-      color="primary"
-      *ngFor="let synonym of synonymous"
-      (click)="formattingChanged.emit(synonym)"
-    >
-      {{ synonym.word }}
-    </button>
-  </mat-toolbar-row>
-</mat-toolbar>
+<mat-card>
+  <mat-card-content>
+    <section class="row">
+      <button
+        mat-raised-button
+        [color]="formatting.value ? 'accent' : 'primary'"
+        *ngFor="let formatting of togglerFormattings"
+        (click)="toggleFormatting(formatting)"
+      >
+        <mat-icon>{{ formatting.icon }}</mat-icon>
+      </button>
+      <ec-colorpicker-widget
+        (colorSelected)="
+          formattingChanged.emit({
+            style: 'background',
+            value: $event
+          })
+        "
+        >format_color_fill</ec-colorpicker-widget
+      >
+
+      <ec-colorpicker-widget
+        (colorSelected)="
+          formattingChanged.emit({
+            style: 'color',
+            value: $event
+          })
+        "
+        >format_color_text</ec-colorpicker-widget
+      >
+    </section>
+    <section class="row">
+      <ec-synonymous-widget
+        [word]="word"
+        (synonymSelected)="
+          formattingChanged.emit({
+            property: 'innerText',
+            value: $event
+          })
+        "
+      ></ec-synonymous-widget>
+    </section>
+  </mat-card-content>
+</mat-card>

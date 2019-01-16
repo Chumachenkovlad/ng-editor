@@ -1,2 +1,5 @@
-<ec-editor-toolbar></ec-editor-toolbar>
+<ec-editor-toolbar
+  [selectedWord]="selectedWord"
+  (formattingChanged)="changeFormatting($event)"
+></ec-editor-toolbar>
 <ec-editor-textarea></ec-editor-textarea>

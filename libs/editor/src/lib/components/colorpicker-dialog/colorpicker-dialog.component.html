@@ -1,0 +1,15 @@
+<mat-card [style.backgroundColor]="colorControl.value" class="mat-elevation-z0">
+  <mat-card-header> <h2>Input color</h2> </mat-card-header>
+  <mat-card-content>
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        placeholder="Color"
+        [formControl]="colorControl"
+    /></mat-form-field>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="selectColor()">Select</button>
+  </mat-card-actions>
+</mat-card>
