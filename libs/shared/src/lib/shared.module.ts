@@ -22,7 +22,8 @@ const MATERIAL_MODULES = [
   MatTooltipModule,
   MatDialogModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatTooltipModule
 ];
 
 @NgModule({
