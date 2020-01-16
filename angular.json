@@ -16,13 +16,11 @@
               "libs/editor/tsconfig.lib.json",
               "libs/editor/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/editor/jest.config.js",
             "tsConfig": "libs/editor/tsconfig.spec.json",
@@ -111,13 +109,11 @@
               "apps/testapp/tsconfig.app.json",
               "apps/testapp/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/testapp/jest.config.js",
             "tsConfig": "apps/testapp/tsconfig.spec.json",
@@ -147,9 +143,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/testapp-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -167,13 +161,11 @@
               "libs/shared/tsconfig.lib.json",
               "libs/shared/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/jest.config.js",
             "tsConfig": "libs/shared/tsconfig.spec.json",
@@ -195,13 +187,11 @@
               "libs/core/tsconfig.lib.json",
               "libs/core/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/core/jest.config.js",
             "tsConfig": "libs/core/tsconfig.spec.json",
@@ -216,19 +206,24 @@
       "typescriptMismatch": false,
       "versionMismatch": false
     },
-    "defaultCollection": "@nrwl/schematics"
+    "defaultCollection": "@nrwl/angular"
   },
   "schematics": {
     "@nrwl/schematics:application": {
       "styleext": "scss",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "protractor"
     },
     "@nrwl/schematics:component": {
       "styleext": "scss",
       "changeDetection": "OnPush"
     },
     "@nrwl/schematics:library": {
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "framework": "angular"
+    },
+    "@nrwl/schematics:node-application": {
+      "framework": "express"
     }
   },
   "defaultProject": "editor"
